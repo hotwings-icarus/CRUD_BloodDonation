@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2>Donor List</h2>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Address</th>
+    <th>Blood Group</th>
+    <th>Rh Factor</th>
+    <th>Consent</th>
+    <th>ID</th>
+    <th>Update</th>
+    <th>Delete</th>
+  </tr>
+  {%for donor in donors%}
+  <tr>
+    <td>{{donor.name}}</td>
+    <td>{{donor.age}}</td>
+    <td>{{donor.address}}</td>
+    <td>{{donor.blood_grp}}</td>
+    <td>{{donor.rh}}</td>
+    <td>{{donor.consent}}</td>
+    <td><a href="{{donor.image.url}}"><img height=50 width=50 src="{{donor.image.url}}" alt="{{donor.name}}"></a></td>
+    <td><a href="update-donor/{{donor.pk}}">Update</a></td>
+    <td><a href="delete-donor/{{donor.pk}}">Delete</a></td>
+
+  </tr>
+  {%endfor%}
+</table>
+
+</body>
+</html>

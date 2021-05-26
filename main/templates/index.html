@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="add-donor" method='POST' enctype="multipart/form-data">
+        {%csrf_token%}
+    <p>Name</p>
+    <input type="text" name='name'>
+    <br>
+    <p>Age</p>
+    <input type="text" name='age'>
+    <br>
+    <p>Address</p>
+    <textarea name="address" cols="30" rows="10"></textarea>
+    <br>
+    <p>Blood Group</p>
+        <select id="blood_grp" name="blood_grp">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="O">O</option>
+            <option value="AB">AB</option>
+        </select>
+    <br>
+    <p>Rhesus Factor?</p>
+    <input type="radio" id="rh+" name="rh" value="False" />
+    <label for="+">+</label><br />
+    <input type="radio" id="rh_" name="rh" value="True" />
+    <label for="-">-</label>
+    <br>
+    <p>I agree to donate blood</p>
+    <input type="checkbox" id="consent" name="consent" value="True"> 
+    <label for="consent">I agree</label><br>
+  </div>
+  <p>ID</p>
+  <input type="file" name='image'>
+    <button type='submit'>Submit</button>
+</form>
+</body>
+</html>
